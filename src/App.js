@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
+let name = "Binu"
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <>
+      <nav>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </nav>
+      <div className="container">
+        <h1>Hello {name}</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload. And that could make your work done.
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate dolores eligendi accusamus ratione incidunt id esse sapiente iste, unde eius tempora nemo asperiores perspiciatis, officiis aperiam ullam. Natus, sit odit.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React with CWH
-        </a>
-      </header>
-    </div>
+      </div>
+    </>
   );
 }
 
