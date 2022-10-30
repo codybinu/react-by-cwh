@@ -3,18 +3,44 @@ import React, { useState } from 'react'
 
 
 export default function TextForm(props) {
+    //Function to make string to upper case
     const handleUpClick = () => {
         // console.log("UpperCase was clicked")
         let newText = text.toUpperCase();
         // setText("You have clicked on handleUpClick")
         setText(newText)
     }
+
+    //Function to make String to Lower case
     const handleLoClick = () => {
-        // console.log("UpperCase was clicked")
+
         let newText = text.toLowerCase();
-        // setText("You have clicked on handleUpClick")
+
         setText(newText)
     }
+
+    //Function to capitalize the first letters of each word of the string
+    const handleCapClick = () => {
+        let newText = () => {
+            let finalStrArr = [];
+            let strArr = text.split(" ")
+            strArr.forEach(element => {
+                finalStrArr.push(element.charAt(0).toUpperCase() + element.slice(1));
+            });
+            let finalStr = finalStrArr.join(" ")
+            return finalStr;
+        }
+        setText(newText)
+    }
+
+    //Function to speak the given text
+    const speak = () => {
+        let msg = new SpeechSynthesisUtterance();
+        msg.text = text;
+        window.speechSynthesis.speak(msg);
+    }
+
+
     const handleOnChange = (event) => {
         // console.log("OnChange was clicked")
         setText(event.target.value)
@@ -28,8 +54,18 @@ export default function TextForm(props) {
                     <label htmlFor="myBox" className="form-label"></label>
                     <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
                 </div>
+                
+                {/* Button to make string to upper case */}
                 <button className="btn btn-primary mx-2" onClick={handleUpClick}> Convert to UpperCase</button>
+                
+                {/* Button to make String to Lower case */}
                 <button className="btn btn-primary mx-2" onClick={handleLoClick}> Convert to LowerCase</button>
+               
+                {/* Button to make string to upper case */}
+                <button className="btn btn-primary mx-2" onClick={handleCapClick}> Convert to Capitalized Case</button>
+               
+                {/* Button to speak the given text */}
+                <button type="submit" onClick={speak} className="btn btn-danger mx-2">Speak</button>
             </div>
             <div className="container my-3">
                 <h2>Your Text Summary</h2>
