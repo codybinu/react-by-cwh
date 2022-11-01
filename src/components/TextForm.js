@@ -65,7 +65,7 @@ export default function TextForm(props) {
                 <button className="btn btn-primary mx-2" onClick={handleCapClick}> Convert to Capitalized Case</button>
                
                 {/* Button to speak the given text */}
-                <button type="submit" onClick={speak} className="btn btn-danger mx-2">Speak</button>
+                <button type="submit" onClick={speak} className="btn btn-danger mx-2">Speak </button>
             </div>
             <div className="container my-3">
                 <h2>Your Text Summary</h2>
