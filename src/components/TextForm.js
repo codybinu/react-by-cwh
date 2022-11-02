@@ -36,6 +36,19 @@ export default function TextForm(props) {
         window.speechSynthesis.speak(msg);
     }
 
+    //Function to Copy the given text 
+    const handleCopy = ()=>{
+        let text= document.querySelector('#myBox');
+        text.select();
+        navigator.clipboard.writeText(text.value)
+    }
+
+    // Button to remove extra spaces from the given text
+    const handleExtraSpaces = () => {
+        let newText = text.split(/[  ]+/);
+        setText(newText.join(" "))
+    }
+
 
     const handleOnChange = (event) => {
         // console.log("OnChange was clicked")
@@ -62,6 +75,12 @@ export default function TextForm(props) {
                
                 {/* Button to speak the given text */}
                 <button type="submit" onClick={speakUp} className="btn btn-danger mx-2">Speak </button>
+
+                {/* Button to Copy the given text */}
+                <button type="submit" onClick={handleCopy} className="btn btn-primary mx-2">Copy Text</button>
+
+                {/* Button to remove extra spaces from the given text */}
+                <button type="submit" onClick={handleExtraSpaces} className="btn btn-primary mx-2">Remove extra spaces</button>
             </div>
             <div className="container my-3">
                 <h2>Your Text Summary</h2>
