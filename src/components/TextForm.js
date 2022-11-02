@@ -5,17 +5,13 @@ import React, { useState } from 'react'
 export default function TextForm(props) {
     //Function to make string to upper case
     const handleUpClick = () => {
-        // console.log("UpperCase was clicked")
         let newText = text.toUpperCase();
-        // setText("You have clicked on handleUpClick")
         setText(newText)
     }
 
     //Function to make String to Lower case
     const handleLoClick = () => {
-
         let newText = text.toLowerCase();
-
         setText(newText)
     }
 
