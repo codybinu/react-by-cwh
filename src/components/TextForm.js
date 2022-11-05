@@ -6,13 +6,15 @@ export default function TextForm(props) {
     //Function to make string to upper case
     const handleUpClick = () => {
         let newText = text.toUpperCase();
-        setText(newText)
+        setText(newText);
+        props.showAlert("Converted to UPPERCASE", "info")
     }
 
     //Function to make String to Lower case
     const handleLoClick = () => {
         let newText = text.toLowerCase();
         setText(newText)
+        props.showAlert("Converted to lowercase", "info")
     }
 
     //Function to capitalize the first letters of each word of the string
@@ -27,6 +29,7 @@ export default function TextForm(props) {
             return finalStr;
         }
         setText(newText)
+        props.showAlert("Converted to Capitalized Case", "info")
     }
 
     //Function to speak the given text
@@ -34,6 +37,7 @@ export default function TextForm(props) {
         let msg = new SpeechSynthesisUtterance();
         msg.text = text;
         window.speechSynthesis.speak(msg);
+        props.showAlert("system is speaking up", "info")
     }
 
     //Function to Copy the given text 
@@ -41,12 +45,14 @@ export default function TextForm(props) {
         let text = document.querySelector('#myBox');
         text.select();
         navigator.clipboard.writeText(text.value)
+        props.showAlert("text copied to clipboard", "info")
     }
 
     // Button to remove extra spaces from the given text
     const handleExtraSpaces = () => {
         let newText = text.split(/[  ]+/);
         setText(newText.join(" "))
+        props.showAlert("removing extra spaces", "success")
     }
 
 
