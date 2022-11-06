@@ -90,7 +90,7 @@ export default function TextForm(props) {
                 <button className="btn btn-primary mx-2" onClick={handleCapClick}> Convert to Capitalized Case</button>
 
                 {/* Button to speak the given text */}
-                <button type="submit" onClick={speakUp} className="btn btn-danger mx-2">Speak </button>
+                <button type="submit" onClick={speakUp} className="btn btn-primary mx-2">Speak </button>
 
                 {/* Button to Copy the given text */}
                 <button type="submit" onClick={handleCopy} className="btn btn-primary mx-2">Copy Text</button>
