@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import About from './components/About';
 import {
   createBrowserRouter,
-  RouterProvider,
+  RouterProvider
 
 } from "react-router-dom";
 
