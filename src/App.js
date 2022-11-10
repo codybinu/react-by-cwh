@@ -5,11 +5,12 @@ import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import React, { useState } from 'react';
 import About from './components/About';
-import {
-  createBrowserRouter,
-  RouterProvider
+// import {
+//   createBrowserRouter,
+//   RouterProvider
 
-} from "react-router-dom";
+// } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light'); // Wheather dark mode is eabled or not
@@ -40,31 +41,31 @@ function App() {
   }
 
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <TextForm />,
-      showAlert: { showAlert },
-      heading: "Enter the text to analyze below",
-      mode: { mode }
-    },
-    {
-      path: "/about",
-      element: <About />
-    },
-  ]);
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element: <TextForm />,
+  //     showAlert: { showAlert },
+  //     heading: "Enter the text to analyze below",
+  //     mode: { mode }
+  //   },
+  //   {
+  //     path: "/about",
+  //     element: <About />
+  //   },
+  // ]);
 
 
 
   return (
 
     <>
-
-      {/* <Navbar title="TextUtils" aboutText="About TextUtils"/> */}
-      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
-      <Alert alert={alert} />
-      <div className="container my-3">
-        {/* <Switch>
+      <BrowserRouter>
+        {/* <Navbar title="TextUtils" aboutText="About TextUtils"/> */}
+        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+        <Alert alert={alert} />
+        <div className="container my-3">
+          {/* <Switch>
             <Route path="/about">
               <About />
             </Route>
@@ -73,13 +74,21 @@ function App() {
             </Route>
           </Switch> */}
 
-        <React.StrictMode>
+          {/* <React.StrictMode>
           <RouterProvider router={router} />
-        </React.StrictMode>
+        </React.StrictMode> */}
 
 
-      </div>
+          <Routes>
 
+            <Route path="/" element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />} />
+            <Route path="/about" element={<About />} />
+
+          </Routes>
+
+
+        </div>
+      </BrowserRouter>
     </>
 
   );
