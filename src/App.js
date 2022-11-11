@@ -65,14 +65,7 @@ function App() {
         <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container my-3">
-          {/* <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/">
-              <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />
-            </Route>
-          </Switch> */}
+          
 
           {/* <React.StrictMode>
           <RouterProvider router={router} />
