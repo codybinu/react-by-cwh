@@ -39,24 +39,6 @@ function App() {
       document.title = 'TextUtils - LightMode'
     }
   }
-
-
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: <TextForm />,
-  //     showAlert: { showAlert },
-  //     heading: "Enter the text to analyze below",
-  //     mode: { mode }
-  //   },
-  //   {
-  //     path: "/about",
-  //     element: <About />
-  //   },
-  // ]);
-
-
-
   return (
 
     <>
