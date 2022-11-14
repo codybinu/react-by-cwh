@@ -5,11 +5,7 @@ import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import React, { useState } from 'react';
 import About from './components/About';
-// import {
-//   createBrowserRouter,
-//   RouterProvider
 
-// } from "react-router-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
