@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+// Alert popup code
 export default function Alert(props) {
     const capitalize = (word) =>{
         const lower = word.toLowerCase();
